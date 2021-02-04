@@ -67,6 +67,7 @@ This line calculates the simple moving average of the `close` value.
 
 This line plots the previously calculated moving average.
 
+For more examples, the source code of the built in library is available: https://github.com/quadcode-tech/quadcodescript-library
 
 Built-in series
 ---------------
