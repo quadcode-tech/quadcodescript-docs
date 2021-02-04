@@ -489,7 +489,7 @@ class QCSIndex(Index):
 
 class QCSDomain(Domain):
     name = 'qcs'
-    label = _('QuadCode Script')
+    label = _('Quadcode Script')
 
     roles = {
         'function': XRefRole(),

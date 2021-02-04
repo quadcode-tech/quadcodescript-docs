@@ -1,4 +1,4 @@
-QuadCode Script
+Quadcode Script
 ===============
 
 QCS is a language that allows creating custom technical analysis instruments. Currently, the language is based on Lua 5.3 and supports most of the Lua language features.

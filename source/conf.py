@@ -18,9 +18,9 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'IQ Option Technical Analysis Language'
-copyright = '2020, IQ Option'
-author = 'IQ Option'
+project = 'Quadcode Script'
+copyright = '2020-2021, Quadcode'
+author = 'Quadcode'
 
 # The full version, including alpha/beta/rc tags
 release = '1.1.0'
