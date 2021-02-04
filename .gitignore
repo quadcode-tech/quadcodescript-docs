@@ -1,0 +1,4 @@
+apidoc_en.json
+build/**
+source/qcs/__pycache__/**
+*.pyc
