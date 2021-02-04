@@ -1,0 +1,135 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hma &#8212; IQ Option Technical Analysis Language 1.1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="rma" href="rma.html" />
+    <link rel="prev" title="ema" href="ema.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="rma.html" title="rma"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ema.html" title="ema"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">hma</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="hma">
+<h1>hma<a class="headerlink" href="#hma" title="Permalink to this headline">¶</a></h1>
+<dl class="qcs function">
+<dt id="qcs.fn.hma">
+<code class="sig-name descname">hma</code><span class="sig-paren">(</span><em class="sig-param">series</em>, <em class="sig-param">period</em><span class="sig-paren">)</span><a class="headerlink" href="#qcs.fn.hma" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>series</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.series"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">series</span></code></a>) – Input series</p></li>
+<li><p><strong>period</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.numeric"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">numeric</span></code></a>) – MA period</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../built_in_types.html#qcs.type.series"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">series</span></code></a></p>
+</dd>
+</dl>
+<p>Returns the Hull moving average of <strong>source</strong> for the <strong>period</strong> bars. <a class="reference internal" href="#qcs.fn.hma"><code class="xref qcs qcs-function docutils literal notranslate"><span class="pre">hma</span></code></a>
+is a composition of the <a class="reference internal" href="wma.html#qcs.fn.wma"><code class="xref qcs qcs-function docutils literal notranslate"><span class="pre">wma</span></code></a> by the following rule:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{hma} = \mathrm{wma}(2 \mathrm{wma}(\mathrm{series}, \frac{n}{2}) - \mathrm{wma}(\mathrm{series}, n), \sqrt{n})\]</div>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ema.html"
+                        title="previous chapter">ema</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="rma.html"
+                        title="next chapter">rma</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/api/averages/hma.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="rma.html" title="rma"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ema.html" title="ema"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">hma</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, IQ Option.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

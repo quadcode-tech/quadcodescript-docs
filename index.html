@@ -1,0 +1,455 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuadCode Script &#8212; IQ Option Technical Analysis Language 1.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="alma" href="api/averages/alma.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="api/averages/alma.html" title="alma"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">QuadCode Script</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="quadcode-script">
+<h1>QuadCode Script<a class="headerlink" href="#quadcode-script" title="Permalink to this headline">¶</a></h1>
+<p>QCS is a language that allows creating custom technical analysis instruments. Currently, the language is based on Lua 5.3 and supports most of the Lua language features.</p>
+<p>The script on QCS defines the calculation of the single instrument value using the current security values, historical data and the user input.</p>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-lua notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">instrument</span> <span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Simple Moving Average&quot;</span><span class="p">,</span> <span class="n">short_name</span> <span class="o">=</span> <span class="s2">&quot;SMA&quot;</span><span class="p">,</span> <span class="n">overlay</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">}</span>
+
+<span class="n">period</span> <span class="o">=</span> <span class="n">input</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;Period&quot;</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">integer</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">input_group</span> <span class="p">{</span>
+   <span class="s2">&quot;Line&quot;</span><span class="p">,</span>
+   <span class="n">color</span> <span class="o">=</span> <span class="n">input</span> <span class="p">{</span> <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="n">color</span> <span class="p">},</span>
+   <span class="n">width</span> <span class="o">=</span> <span class="n">input</span> <span class="p">{</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="n">line_width</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">ma</span> <span class="o">=</span> <span class="n">sma</span> <span class="p">(</span><span class="n">close</span><span class="p">,</span> <span class="n">period</span><span class="p">)</span>
+
+<span class="n">plot</span> <span class="p">(</span><span class="n">ma</span><span class="p">,</span> <span class="s2">&quot;SMA&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span> <span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Simple Moving Average&quot;</span><span class="p">,</span> <span class="n">short_name</span> <span class="o">=</span> <span class="s2">&quot;SMA&quot;</span><span class="p">,</span> <span class="n">overlay</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>This line defines the full and short names for the instrument. The full name is used in the
+add instruments popup. The short name is displayed on the plot. Additionally, this line
+sets that the instrument will be plotted as a plot overlay. For more information,
+see <a class="reference internal" href="api/misc/instrument.html#qcs.fn.instrument"><code class="xref qcs qcs-function docutils literal notranslate"><span class="pre">instrument</span></code></a>.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">period</span> <span class="o">=</span> <span class="n">input</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;Period&quot;</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">integer</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Defines a user-settable period that is an integer value not less than 1. For more information,
+see <a class="reference internal" href="api/input/input.html#qcs.fn.input"><code class="xref qcs qcs-function docutils literal notranslate"><span class="pre">input</span></code></a>.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">input_group</span> <span class="p">{</span>
+   <span class="s2">&quot;Line&quot;</span><span class="p">,</span>
+   <span class="n">color</span> <span class="o">=</span> <span class="n">input</span> <span class="p">{</span> <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="n">color</span> <span class="p">},</span>
+   <span class="n">width</span> <span class="o">=</span> <span class="n">input</span> <span class="p">{</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="n">line_width</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Defines an input group for the instrument visuals. For more information, see
+<a class="reference internal" href="api/input/input_group.html#qcs.fn.input_group"><code class="xref qcs qcs-function docutils literal notranslate"><span class="pre">input_group</span></code></a>.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">ma</span> <span class="o">=</span> <span class="n">sma</span> <span class="p">(</span><span class="n">close</span><span class="p">,</span> <span class="n">period</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This line calculates the simple moving average of the <cite>close</cite> value.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="p">(</span><span class="n">ma</span><span class="p">,</span> <span class="s2">&quot;SMA&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This line plots the previously calculated moving average.</p>
+</div>
+<div class="section" id="built-in-series">
+<h2>Built-in series<a class="headerlink" href="#built-in-series" title="Permalink to this headline">¶</a></h2>
+<dl class="qcs series">
+<dt id="qcs.series.open">
+<code class="sig-name descname">open</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open value of the current candle</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.close">
+<code class="sig-name descname">close</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close value of the current candle</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.high">
+<code class="sig-name descname">high</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.high" title="Permalink to this definition">¶</a></dt>
+<dd><p>High value of the current candle</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.low">
+<code class="sig-name descname">low</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.low" title="Permalink to this definition">¶</a></dt>
+<dd><p>Low value of the current candle</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.volume">
+<code class="sig-name descname">volume</code><a class="headerlink" href="#qcs.series.volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Volume of the current candle</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.hml">
+<code class="sig-name descname">hml</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.hml" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">high</span> <span class="pre">-</span> <span class="pre">low</span></code></p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.hl2">
+<code class="sig-name descname">hl2</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.hl2" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">(high</span> <span class="pre">+</span> <span class="pre">low)</span> <span class="pre">/</span> <span class="pre">2</span></code></p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.hlc3">
+<code class="sig-name descname">hlc3</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.hlc3" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">(high</span> <span class="pre">+</span> <span class="pre">low</span> <span class="pre">+</span> <span class="pre">close)</span> <span class="pre">/</span> <span class="pre">3</span></code> (aka <cite>typical price</cite>)</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.ohlc4">
+<code class="sig-name descname">ohlc4</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.ohlc4" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">(open</span> <span class="pre">+</span> <span class="pre">high</span> <span class="pre">+</span> <span class="pre">low</span> <span class="pre">+</span> <span class="pre">close)</span> <span class="pre">/</span> <span class="pre">4</span></code></p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.hlcc4">
+<code class="sig-name descname">hlcc4</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.hlcc4" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">(high</span> <span class="pre">+</span> <span class="pre">low</span> <span class="pre">+</span> <span class="pre">close</span> <span class="pre">+</span> <span class="pre">close)</span> <span class="pre">/</span> <span class="pre">4</span></code></p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.tr">
+<code class="sig-name descname">tr</code><a class="headerlink" href="#qcs.series.tr" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="code docutils literal notranslate"><span class="pre">max</span> <span class="pre">(high</span> <span class="pre">-</span> <span class="pre">low,</span> <span class="pre">high</span> <span class="pre">-</span> <span class="pre">close</span> <span class="pre">[1],</span> <span class="pre">close</span> <span class="pre">[1]</span> <span class="pre">-</span> <span class="pre">low)</span></code> (aka <cite>true range</cite>)</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.close_time">
+<code class="sig-name descname">close_time</code><a class="headerlink" href="#qcs.series.close_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Candle closing time (unix time)</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.open_time">
+<code class="sig-name descname">open_time</code><a class="headerlink" href="#qcs.series.open_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Candle opening time (unix time)</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.day">
+<code class="sig-name descname">day</code><a class="headerlink" href="#qcs.series.day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Candle opening time (day number in a year)</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.week_day">
+<code class="sig-name descname">week_day</code><a class="headerlink" href="#qcs.series.week_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Candle opening time (day number in a week)</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.month">
+<code class="sig-name descname">month</code><a class="headerlink" href="#qcs.series.month" title="Permalink to this definition">¶</a></dt>
+<dd><p>Candle opening time (month)</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.year">
+<code class="sig-name descname">year</code><a class="headerlink" href="#qcs.series.year" title="Permalink to this definition">¶</a></dt>
+<dd><p>Candle opening time (year)</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.hour">
+<code class="sig-name descname">hour</code><a class="headerlink" href="#qcs.series.hour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Candle opening time (hour)</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.minute">
+<code class="sig-name descname">minute</code><a class="headerlink" href="#qcs.series.minute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Candle opening time (minute)</p>
+</dd></dl>
+
+<dl class="qcs series">
+<dt id="qcs.series.second">
+<code class="sig-name descname">second</code><a class="headerlink" href="#qcs.series.second" title="Permalink to this definition">¶</a></dt>
+<dd><p>Candle opening time (second)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="built-in-functions">
+<h2>Built-in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline">¶</a></h2>
+<p>For convenience and performance reasons, QCS has a wide range of built-in functions.</p>
+<p><strong>Averages</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/averages/alma.html">alma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/averages/ema.html">ema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/averages/hma.html">hma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/averages/rma.html">rma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/averages/sma.html">sma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/averages/ssma.html">ssma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/averages/tma.html">tma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/averages/vidya.html">vidya</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/averages/vwma.html">vwma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/averages/wma.html">wma</a></li>
+</ul>
+</div>
+<p><strong>User Input</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/input/input.html">input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/input/input_group.html">input_group</a></li>
+</ul>
+</div>
+<p><strong>Plots</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/plot/fill.html">fill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/plot/fill_area.html">fill_area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/plot/hline.html">hline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/plot/plot.html">plot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/plot/plot_candle.html">plot_candle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/plot/plot_shape.html">plot_shape</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/plot/rect.html">rect</a></li>
+</ul>
+</div>
+<p><strong>Math</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/math/abs.html">abs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/acos.html">acos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/asin.html">asin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/atan.html">atan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/ceil.html">ceil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/change.html">change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/correlation.html">correlation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/cos.html">cos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/deg.html">deg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/exp.html">exp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/floor.html">floor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/linreg.html">linreg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/log.html">log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/mad.html">mad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/max.html">max</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/median.html">median</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/min.html">min</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/modf.html">modf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/percentile_linear_interpolation.html">percentile_linear_interpolation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/percentile_nearest_rank.html">percentile_nearest_rank</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/rad.html">rad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/round.html">round</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/sin.html">sin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/sqrt.html">sqrt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/stdev.html">stdev</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/sum.html">sum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/math/tan.html">tan</a></li>
+</ul>
+</div>
+<p><strong>Oscillators</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/oscillator/cci.html">cci</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/oscillator/cmo.html">cmo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/oscillator/stochastic.html">stochastic</a></li>
+</ul>
+</div>
+<p><strong>Momentum Instruments</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/momentum/roc.html">roc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/momentum/rsi.html">rsi</a></li>
+</ul>
+</div>
+<p><strong>Miscellaneous</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/advise.html">advise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/assert.html">assert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/bars_since.html">bars_since</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/bars_since_highest.html">bars_since_highest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/bars_since_lowest.html">bars_since_lowest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/conditional.html">conditional</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/date.html">date</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/drop_plot_value.html">drop_plot_value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/error.html">error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/fixnan.html">fixnan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/get_name.html">get_name</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/get_value.html">get_value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/highest.html">highest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/iff.html">iff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/index_range.html">index_range</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/instrument.html">instrument</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/is_series.html">is_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/is_value.html">is_value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/isnan.html">isnan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/lower_prime.html">lower_prime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/lowest.html">lowest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/make_series.html">make_series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/na.html">na</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/nz.html">nz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/prime_bands.html">prime_bands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/print.html">print</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/rgb.html">rgb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/rgba.html">rgba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/sar.html">sar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/upper_prime.html">upper_prime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/value_when.html">value_when</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/misc/version.html">version</a></li>
+</ul>
+</div>
+<p><strong>Security</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/security/get_ticker_id.html">get_ticker_id</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/security/security.html">security</a></li>
+</ul>
+</div>
+<p><strong>State Variables</strong></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/state/current_bar_id.html">current_bar_id</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/state/current_ticker_id.html">current_ticker_id</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/state/is_daily.html">is_daily</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/state/is_dwm.html">is_dwm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/state/is_intraday.html">is_intraday</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/state/is_intrahour.html">is_intrahour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/state/is_monthly.html">is_monthly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/state/is_weekly.html">is_weekly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/state/resolution.html">resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/state/runtime_version.html">runtime_version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="built_in_types.html">Built-in Types</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="indices">
+<h1>Indices<a class="headerlink" href="#indices" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="built_in_types.html#built-in-types"><span class="std std-ref">Built-in Types</span></a></p></li>
+<li><p><a class="reference internal" href="qcs-qcs.html"><span class="std std-ref">QCS Language Reference</span></a></p></li>
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+</ul>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">QuadCode Script</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#built-in-series">Built-in series</a></li>
+<li><a class="reference internal" href="#built-in-functions">Built-in functions</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices">Indices</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api/averages/alma.html"
+                        title="next chapter">alma</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="api/averages/alma.html" title="alma"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">QuadCode Script</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, IQ Option.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

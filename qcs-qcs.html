@@ -1,0 +1,824 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QCS Language Reference &#8212; IQ Option Technical Analysis Language 1.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <script>
+      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
+    </script>
+
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="#" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">QCS Language Reference</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+
+   <h1>QCS Language Reference</h1>
+
+   <div class="modindex-jumpbox">
+   <a href="#cap-Constants"><strong>Constants</strong></a> | 
+   <a href="#cap-Enums"><strong>Enums</strong></a> | 
+   <a href="#cap-Functions (averages)"><strong>Functions (averages)</strong></a> | 
+   <a href="#cap-Functions (input)"><strong>Functions (input)</strong></a> | 
+   <a href="#cap-Functions (math)"><strong>Functions (math)</strong></a> | 
+   <a href="#cap-Functions (misc)"><strong>Functions (misc)</strong></a> | 
+   <a href="#cap-Functions (momentum)"><strong>Functions (momentum)</strong></a> | 
+   <a href="#cap-Functions (oscillator)"><strong>Functions (oscillator)</strong></a> | 
+   <a href="#cap-Functions (plot)"><strong>Functions (plot)</strong></a> | 
+   <a href="#cap-Functions (security)"><strong>Functions (security)</strong></a> | 
+   <a href="#cap-Types"><strong>Types</strong></a>
+   </div>
+
+   <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-Constants"><td></td><td>
+       <strong>Constants</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/state/current_bar_id.html#qcs.constant.current_bar_id"><code class="xref">current_bar_id</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/state/current_ticker_id.html#qcs.constant.current_ticker_id"><code class="xref">current_ticker_id</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/state/is_daily.html#qcs.constant.is_daily"><code class="xref">is_daily</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/state/is_dwm.html#qcs.constant.is_dwm"><code class="xref">is_dwm</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/state/is_intraday.html#qcs.constant.is_intraday"><code class="xref">is_intraday</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/state/is_intrahour.html#qcs.constant.is_intrahour"><code class="xref">is_intrahour</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/state/is_monthly.html#qcs.constant.is_monthly"><code class="xref">is_monthly</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/state/is_weekly.html#qcs.constant.is_weekly"><code class="xref">is_weekly</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/state/resolution.html#qcs.constant.resolution"><code class="xref">resolution</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/state/runtime_version.html#qcs.constant.runtime_version"><code class="xref">runtime_version</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.close"><code class="xref">close</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.close_time"><code class="xref">close_time</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.day"><code class="xref">day</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.high"><code class="xref">high</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.hl2"><code class="xref">hl2</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.hlc3"><code class="xref">hlc3</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.hlcc4"><code class="xref">hlcc4</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.hml"><code class="xref">hml</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.hour"><code class="xref">hour</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.low"><code class="xref">low</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.minute"><code class="xref">minute</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.month"><code class="xref">month</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.ohlc4"><code class="xref">ohlc4</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.open"><code class="xref">open</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.open_time"><code class="xref">open_time</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.second"><code class="xref">second</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.tr"><code class="xref">tr</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.volume"><code class="xref">volume</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.week_day"><code class="xref">week_day</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="index.html#qcs.series.year"><code class="xref">year</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-Enums"><td></td><td>
+       <strong>Enums</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/advise.html#qcs.enum.advice"><code class="xref">advice</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/input/input.html#qcs.enum.input_type"><code class="xref">input_type</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/plot/plot.html#qcs.enum.na_mode"><code class="xref">na_mode</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/plot/plot.html#qcs.enum.plot_style"><code class="xref">plot_style</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/plot/plot_shape.html#qcs.enum.shape_location"><code class="xref">shape_location</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/plot/plot_shape.html#qcs.enum.shape_size"><code class="xref">shape_size</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/plot/plot_shape.html#qcs.enum.shape_style"><code class="xref">shape_style</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-Functions (averages)"><td></td><td>
+       <strong>Functions (averages)</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/averages/alma.html#qcs.fn.alma"><code class="xref">alma(series, period, offset, sigma)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/averages/ema.html#qcs.fn.ema"><code class="xref">ema(source, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/averages/hma.html#qcs.fn.hma"><code class="xref">hma(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/averages/rma.html#qcs.fn.rma"><code class="xref">rma(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/averages/sma.html#qcs.fn.sma"><code class="xref">sma(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/averages/ssma.html#qcs.fn.ssma"><code class="xref">ssma(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/averages/tma.html#qcs.fn.tma"><code class="xref">tma(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/averages/vidya.html#qcs.fn.vidya"><code class="xref">vidya(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/averages/vwma.html#qcs.fn.vwma"><code class="xref">vwma(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/averages/wma.html#qcs.fn.wma"><code class="xref">wma(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-Functions (input)"><td></td><td>
+       <strong>Functions (input)</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/input/input.html#qcs.fn.input"><code class="xref">input([default], [name], [type], [options])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/input/input.html#qcs.fn.input_2"><code class="xref">input([default], [name], [type], [min], [max], [step])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/input/input_group.html#qcs.fn.input_group"><code class="xref">input_group { name=&#34;&#34;, description=&#34;&#34;, inputs... }</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-Functions (math)"><td></td><td>
+       <strong>Functions (math)</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/abs.html#qcs.fn.abs"><code class="xref">abs(x)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/acos.html#qcs.fn.acos"><code class="xref">acos(x)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/asin.html#qcs.fn.asin"><code class="xref">asin(x)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/atan.html#qcs.fn.atan"><code class="xref">atan (y, [x])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/ceil.html#qcs.fn.ceil"><code class="xref">ceil(x)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/change.html#qcs.fn.change"><code class="xref">change(series, n=1)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/correlation.html#qcs.fn.correlation"><code class="xref">correlation(x,y,n)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/cos.html#qcs.fn.cos"><code class="xref">cos(x)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/deg.html#qcs.fn.deg"><code class="xref">deg(x)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/exp.html#qcs.fn.exp"><code class="xref">exp(x)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/floor.html#qcs.fn.floor"><code class="xref">floor(x)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/linreg.html#qcs.fn.linreg"><code class="xref">linreg(x, n, offset)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/log.html#qcs.fn.log"><code class="xref">log(value)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/mad.html#qcs.fn.mad"><code class="xref">mad(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/max.html#qcs.fn.max"><code class="xref">max(lvalue, rvalue)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/median.html#qcs.fn.median"><code class="xref">median(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/min.html#qcs.fn.min"><code class="xref">min(lvalue, rvalue)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/modf.html#qcs.fn.modf"><code class="xref">modf(value)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/percentile_linear_interpolation.html#qcs.fn.percentile_linear_interpolation"><code class="xref">percentile_linear_interpolation(source, period, percentage)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/percentile_nearest_rank.html#qcs.fn.percentile_nearest_rank"><code class="xref">percentile_nearest_rank(source, period, percentage)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/rad.html#qcs.fn.rad"><code class="xref">rad(value)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/round.html#qcs.fn.round"><code class="xref">round(value)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/sin.html#qcs.fn.sin"><code class="xref">sin(value)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/sqrt.html#qcs.fn.sqrt"><code class="xref">sqrt(value)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/stdev.html#qcs.fn.stdev"><code class="xref">stdev(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/sum.html#qcs.fn.sum"><code class="xref">sum(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/math/tan.html#qcs.fn.tan"><code class="xref">tan(value)</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-Functions (misc)"><td></td><td>
+       <strong>Functions (misc)</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/advise.html#qcs.fn.advise"><code class="xref">advise(advice)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/assert.html#qcs.fn.assert"><code class="xref">assert(condition, [message])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/bars_since.html#qcs.fn.bars_since"><code class="xref">bars_since(condition)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/bars_since_highest.html#qcs.fn.bars_since_highest"><code class="xref">bars_since_highest(series, n)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/bars_since_highest.html#qcs.fn.bars_since_highest_2"><code class="xref">bars_since_highest(n)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/bars_since_lowest.html#qcs.fn.bars_since_lowest"><code class="xref">bars_since_lowest(series, n)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/bars_since_lowest.html#qcs.fn.bars_since_lowest_2"><code class="xref">bars_since_lowest(n)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/conditional.html#qcs.fn.conditional"><code class="xref">conditional(x)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/date.html#qcs.fn.date"><code class="xref">date([timestamp])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/drop_plot_value.html#qcs.fn.drop_plot_value"><code class="xref">drop_plot_value(name, bar_id)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/error.html#qcs.fn.error"><code class="xref">error(message)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/fixnan.html#qcs.fn.fixnan"><code class="xref">fixnan(series)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/get_name.html#qcs.fn.get_name"><code class="xref">get_name(series)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/get_value.html#qcs.fn.get_value"><code class="xref">get_value(x, [default])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/highest.html#qcs.fn.highest"><code class="xref">highest(series, n)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/highest.html#qcs.fn.highest_2"><code class="xref">highest(n)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/iff.html#qcs.fn.iff"><code class="xref">iff(condition, then, else)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/index_range.html#qcs.fn.index_range"><code class="xref">index_range(start_index)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/instrument.html#qcs.fn.instrument"><code class="xref">instrument(name, short_name_or_overlay, description_or_overlay, icon_or_overlay, overlay)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/is_series.html#qcs.fn.is_series"><code class="xref">is_series(value)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/is_value.html#qcs.fn.is_value"><code class="xref">is_value(value)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/isnan.html#qcs.fn.isnan"><code class="xref">isnan(value)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/lower_prime.html#qcs.fn.lower_prime"><code class="xref">lower_prime(series)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/lowest.html#qcs.fn.lowest"><code class="xref">lowest(series, n)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/lowest.html#qcs.fn.lowest_2"><code class="xref">lowest(n)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/make_series.html#qcs.fn.make_series"><code class="xref">make_series([name])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/na.html#qcs.fn.na"><code class="xref">na(value)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/nz.html#qcs.fn.nz"><code class="xref">nz(value, [default])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/prime_bands.html#qcs.fn.prime_bands"><code class="xref">prime_bands(series)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/print.html#qcs.fn.print"><code class="xref">print(...)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/rgb.html#qcs.fn.rgb"><code class="xref">rgb(r, g, b)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/rgba.html#qcs.fn.rgba"><code class="xref">rgba(r, g, b, a)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/sar.html#qcs.fn.sar"><code class="xref">sar(minaf,step,maxaf)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/upper_prime.html#qcs.fn.upper_prime"><code class="xref">upper_prime(series)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/value_when.html#qcs.fn.value_when"><code class="xref">value_when(condition, series, occurrence)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/misc/version.html#qcs.fn.version"><code class="xref">version(min_version)</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-Functions (momentum)"><td></td><td>
+       <strong>Functions (momentum)</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/momentum/roc.html#qcs.fn.roc"><code class="xref">roc(series, [period])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/momentum/rsi.html#qcs.fn.rsi"><code class="xref">rsi(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-Functions (oscillator)"><td></td><td>
+       <strong>Functions (oscillator)</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/oscillator/cci.html#qcs.fn.cci"><code class="xref">cci(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/oscillator/cmo.html#qcs.fn.cmo"><code class="xref">cmo(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/oscillator/stochastic.html#qcs.fn.stochastic"><code class="xref">stochastic(series, period)</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-Functions (plot)"><td></td><td>
+       <strong>Functions (plot)</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/plot/fill.html#qcs.fn.fill"><code class="xref">fill(first,second,[name,color])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/plot/fill_area.html#qcs.fn.fill_area"><code class="xref">fill_area(first, second, [name], [color])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/plot/hline.html#qcs.fn.hline"><code class="xref">hline(source,[name, color, line_width, offset, plot_style, show_label])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/plot/plot.html#qcs.fn.plot"><code class="xref">plot(series, [name], [color], [line_width], [offset], [plot_style], [na_handling_mode])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/plot/plot_candle.html#qcs.fn.plot_candle"><code class="xref">plot_candle(open, high, low, close, [name], [candle_color])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/plot/plot_shape.html#qcs.fn.plot_shape"><code class="xref">plot_shape(series, [name], [plot_shape_style], [plot_shape_size], [shape_color], [plot_shape_location], [offset], [text], [text_color])</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/plot/rect.html#qcs.fn.rect"><code class="xref">rect(first, second, [name], [color], [width])</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-Functions (security)"><td></td><td>
+       <strong>Functions (security)</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/security/get_ticker_id.html#qcs.fn.get_ticker_id"><code class="xref">get_ticker_id(ticker)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="api/security/security.html#qcs.fn.security"><code class="xref">security(ticker_id, resolution)</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-Types"><td></td><td>
+       <strong>Types</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="built_in_types.html#qcs.type.boolean"><code class="xref">boolean</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="built_in_types.html#qcs.type.color"><code class="xref">color</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="built_in_types.html#qcs.type.integer"><code class="xref">integer</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="built_in_types.html#qcs.type.numeric"><code class="xref">numeric</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="built_in_types.html#qcs.type.series"><code class="xref">series</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="built_in_types.html#qcs.type.series[boolean]"><code class="xref">series[boolean]</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="built_in_types.html#qcs.type.series[integer]"><code class="xref">series[integer]</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="built_in_types.html#qcs.type.series[numeric]"><code class="xref">series[numeric]</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="built_in_types.html#qcs.type.string"><code class="xref">string</code></a></td><td>
+       <em></em></td></tr>
+   </table>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="#" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">QCS Language Reference</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, IQ Option.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

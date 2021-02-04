@@ -1,0 +1,142 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fill_area &#8212; IQ Option Technical Analysis Language 1.1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="hline" href="hline.html" />
+    <link rel="prev" title="fill" href="fill.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="hline.html" title="hline"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="fill.html" title="fill"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">fill_area</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="fill-area">
+<h1>fill_area<a class="headerlink" href="#fill-area" title="Permalink to this headline">¶</a></h1>
+<dl class="qcs function">
+<dt id="qcs.fn.fill_area">
+<code class="sig-name descname">fill_area</code><span class="sig-paren">(</span><em class="sig-param">first</em>, <em class="sig-param">second</em><span class="optional">[</span>, <em class="sig-param">name</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">color</em><span class="optional">]</span><span class="sig-paren">)</span><span class="optional">[</span>has-table-overload<span class="optional">]</span><a class="headerlink" href="#qcs.fn.fill_area" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.series"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">series</span></code></a> or <a class="reference internal" href="../../built_in_types.html#qcs.type.numeric"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">numeric</span></code></a>) – First value</p></li>
+<li><p><strong>second</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.series"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">series</span></code></a> or <a class="reference internal" href="../../built_in_types.html#qcs.type.numeric"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">numeric</span></code></a>) – Second value</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.string"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">string</span></code></a>) – Plot name. Default name is <code class="code docutils literal notranslate"><span class="pre">&quot;fill_area(first,</span> <span class="pre">second)&quot;</span></code></p></li>
+<li><p><strong>color</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.color"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">color</span></code></a>) – Plot color. Default value is <code class="code docutils literal notranslate"><span class="pre">&quot;white&quot;</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p>Fills the area between the current values of the <cite>first</cite> and <cite>second</cite>.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">overbought</span> <span class="o">=</span> <span class="n">input</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="s2">&quot;Overbought&quot;</span><span class="p">)</span>
+<span class="n">oversold</span> <span class="o">=</span> <span class="n">input</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;Oversold&quot;</span><span class="p">)</span>
+
+<span class="n">fill_area</span> <span class="p">{</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">overbought</span><span class="p">,</span>
+    <span class="n">second</span> <span class="o">=</span> <span class="n">oversold</span><span class="p">,</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="fill.html"
+                        title="previous chapter">fill</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="hline.html"
+                        title="next chapter">hline</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/api/plot/fill_area.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="hline.html" title="hline"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="fill.html" title="fill"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">fill_area</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, IQ Option.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

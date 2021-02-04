@@ -1,0 +1,144 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>get_value &#8212; IQ Option Technical Analysis Language 1.1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="highest" href="highest.html" />
+    <link rel="prev" title="get_name" href="get_name.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="highest.html" title="highest"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="get_name.html" title="get_name"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">get_value</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="get-value">
+<h1>get_value<a class="headerlink" href="#get-value" title="Permalink to this headline">¶</a></h1>
+<dl class="qcs function">
+<dt id="qcs.fn.get_value">
+<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="optional">[</span>, <em class="sig-param">default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#qcs.fn.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – Input value</p></li>
+<li><p><strong>default</strong> – Optional default value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>type of <strong>x</strong></p>
+</dd>
+</dl>
+<p>Returns the value of <strong>x</strong> at the current bar or <strong>default</strong> value,
+if <strong>x</strong> does not have the current value</p>
+<p>This function is helpful when one needs to use the series as a
+condition for the <em>if</em> statement.</p>
+<p>If type of <strong>x</strong> is not <a class="reference internal" href="../../built_in_types.html#qcs.type.series"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">series</span></code></a> - <strong>x</strong> is returned,
+if <strong>x</strong> is not <strong>nil</strong>, <strong>default</strong> otherwise</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">uptrend</span> <span class="o">=</span> <span class="n">conditional</span> <span class="p">(</span><span class="n">close</span> <span class="o">&gt;</span> <span class="n">open</span><span class="p">)</span>
+
+<span class="kr">if</span> <span class="n">get_value</span> <span class="p">(</span><span class="n">uptrend</span><span class="p">)</span> <span class="kr">then</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Going up&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="get_name.html"
+                        title="previous chapter">get_name</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="highest.html"
+                        title="next chapter">highest</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/api/misc/get_value.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="highest.html" title="highest"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="get_name.html" title="get_name"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">get_value</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, IQ Option.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

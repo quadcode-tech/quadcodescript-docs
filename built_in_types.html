@@ -1,0 +1,306 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Built-in Types &#8212; IQ Option Technical Analysis Language 1.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="runtime_version" href="api/state/runtime_version.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="api/state/runtime_version.html" title="runtime_version"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Built-in Types</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="built-in-types">
+<h1>Built-in Types<a class="headerlink" href="#built-in-types" title="Permalink to this headline">¶</a></h1>
+<dl class="qcs type">
+<dt id="qcs.type.series">
+<code class="sig-name descname">series</code><a class="headerlink" href="#qcs.type.series" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Series</strong> is a list of values that stretches back in time from the current bar.
+Indexing the series returns the new series shifted by the specified amount of bars
+backward. For example:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Index</p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>9</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>close</p></td>
+<td><p>15.25</p></td>
+<td><p>15.46</p></td>
+<td><p>15.35</p></td>
+<td><p>15.03</p></td>
+<td><p>15.02</p></td>
+<td><p>14.80</p></td>
+<td><p>15.01</p></td>
+<td><p>12.87</p></td>
+<td><p>12.53</p></td>
+<td><p>12.43</p></td>
+</tr>
+<tr class="row-odd"><td><p>close[1]</p></td>
+<td><p>nil</p></td>
+<td><p>15.25</p></td>
+<td><p>15.46</p></td>
+<td><p>15.35</p></td>
+<td><p>15.03</p></td>
+<td><p>15.02</p></td>
+<td><p>14.80</p></td>
+<td><p>15.01</p></td>
+<td><p>12.87</p></td>
+<td><p>12.53</p></td>
+</tr>
+<tr class="row-even"><td><p>close[2]</p></td>
+<td><p>nil</p></td>
+<td><p>nil</p></td>
+<td><p>15.25</p></td>
+<td><p>15.46</p></td>
+<td><p>15.35</p></td>
+<td><p>15.03</p></td>
+<td><p>15.02</p></td>
+<td><p>14.80</p></td>
+<td><p>15.01</p></td>
+<td><p>12.87</p></td>
+</tr>
+<tr class="row-odd"><td><p>close[3]</p></td>
+<td><p>nil</p></td>
+<td><p>nil</p></td>
+<td><p>nil</p></td>
+<td><p>15.25</p></td>
+<td><p>15.46</p></td>
+<td><p>15.35</p></td>
+<td><p>15.03</p></td>
+<td><p>15.02</p></td>
+<td><p>14.80</p></td>
+<td><p>15.01</p></td>
+</tr>
+</tbody>
+</table>
+<p>Series support the number of arithmetic and comparison operations.
+For example, <code class="code docutils literal notranslate"><span class="pre">(open+close)/2</span></code> will return the series, which values are the
+half sum of the open and close.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 34%" />
+<col style="width: 34%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operator</p></th>
+<th class="head"><p>Left-hand side</p></th>
+<th class="head"><p>Right-hand side</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>+,-,*,/,^</p></td>
+<td><p>series or numeric</p></td>
+<td><p>series or numeric</p></td>
+<td><p>series</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt;,&gt;,&lt;=,&gt;=</p></td>
+<td><p>series or numeric</p></td>
+<td><p>series or numeric</p></td>
+<td><p>boolean</p></td>
+</tr>
+<tr class="row-even"><td><p>==, ~=</p></td>
+<td><p>series</p></td>
+<td><p>series</p></td>
+<td><p>boolean</p></td>
+</tr>
+<tr class="row-odd"><td><p><cite>-</cite></p></td>
+<td><p>series</p></td>
+<td></td>
+<td><p>series</p></td>
+</tr>
+</tbody>
+</table>
+<p>Where:</p>
+<ul class="simple">
+<li><p><cite>^</cite> - power operator.</p></li>
+<li><p><cite>~=</cite> - inequality operator.</p></li>
+</ul>
+<p>Due to Lua limitations, it is not possible to compare <a class="reference internal" href="#qcs.type.series"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">series</span></code></a> and a value directly.
+In this case, <a class="reference internal" href="api/misc/get_value.html#qcs.fn.get_value"><code class="xref qcs qcs-function docutils literal notranslate"><span class="pre">get_value</span></code></a> should be used.</p>
+<p>For example:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="kr">if</span> <span class="n">get_value</span><span class="p">(</span><span class="n">open</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="kr">then</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Hooray!&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</pre></div>
+</div>
+<p>The same restriction applies when using the series as a condition.</p>
+</dd></dl>
+
+<dl class="qcs type">
+<dt id="qcs.type.series[numeric]">
+<code class="sig-name descname">series[numeric]</code><a class="headerlink" href="#qcs.type.series[numeric]" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="#qcs.type.series"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">series</span></code></a> that consists of <a class="reference internal" href="#qcs.type.numeric"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">numeric</span></code></a> values.</p>
+</dd></dl>
+
+<dl class="qcs type">
+<dt id="qcs.type.series[integer]">
+<code class="sig-name descname">series[integer]</code><a class="headerlink" href="#qcs.type.series[integer]" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="#qcs.type.series"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">series</span></code></a> that consists of <a class="reference internal" href="#qcs.type.integer"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">integer</span></code></a> values.</p>
+</dd></dl>
+
+<dl class="qcs type">
+<dt id="qcs.type.series[boolean]">
+<code class="sig-name descname">series[boolean]</code><a class="headerlink" href="#qcs.type.series[boolean]" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="#qcs.type.series"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">series</span></code></a> that consists of <a class="reference internal" href="#qcs.type.boolean"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">boolean</span></code></a> values.</p>
+</dd></dl>
+
+<dl class="qcs type">
+<dt id="qcs.type.integer">
+<code class="sig-name descname">integer</code><a class="headerlink" href="#qcs.type.integer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A 64-bit signed integer value.</p>
+</dd></dl>
+
+<dl class="qcs type">
+<dt id="qcs.type.numeric">
+<code class="sig-name descname">numeric</code><a class="headerlink" href="#qcs.type.numeric" title="Permalink to this definition">¶</a></dt>
+<dd><p>A 64-bit floating point value.</p>
+</dd></dl>
+
+<dl class="qcs type">
+<dt id="qcs.type.boolean">
+<code class="sig-name descname">boolean</code><a class="headerlink" href="#qcs.type.boolean" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean value with the values <strong>true</strong> and <strong>false</strong>. By default, in Lua the condition
+is considered to be false when its value is <strong>false</strong> or <strong>nil</strong>. In some cases,
+that are explicitly documented, we also consider <strong>0</strong> to be false.</p>
+</dd></dl>
+
+<dl class="qcs type">
+<dt id="qcs.type.string">
+<code class="sig-name descname">string</code><a class="headerlink" href="#qcs.type.string" title="Permalink to this definition">¶</a></dt>
+<dd><p>A string value.</p>
+</dd></dl>
+
+<dl class="qcs type">
+<dt id="qcs.type.color">
+<code class="sig-name descname">color</code><a class="headerlink" href="#qcs.type.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>A string, that represents the color in the following formats:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">&quot;#RRGGBB&quot;</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">&quot;#RRGGBB&quot;</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">&quot;#RRGGBBAA&quot;</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">&quot;rgb(255,255,255)&quot;</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">&quot;rgb(255,255,255,1.0)&quot;</span></code></p></li>
+<li><p>HTML color <a class="reference external" href="https://htmlcolorcodes.com/color-names/">name</a></p></li>
+</ul>
+<p>For convenience, there are two functions available to create the color:
+<a class="reference internal" href="api/misc/rgb.html#qcs.fn.rgb"><code class="xref qcs qcs-function docutils literal notranslate"><span class="pre">rgb</span></code></a> and <a class="reference internal" href="api/misc/rgba.html#qcs.fn.rgba"><code class="xref qcs qcs-function docutils literal notranslate"><span class="pre">rgba</span></code></a>.</p>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api/state/runtime_version.html"
+                        title="previous chapter">runtime_version</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/built_in_types.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="api/state/runtime_version.html" title="runtime_version"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Built-in Types</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, IQ Option.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

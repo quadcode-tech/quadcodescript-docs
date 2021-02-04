@@ -1,0 +1,147 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sar &#8212; IQ Option Technical Analysis Language 1.1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="upper_prime" href="upper_prime.html" />
+    <link rel="prev" title="rgba" href="rgba.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="upper_prime.html" title="upper_prime"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="rgba.html" title="rgba"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">sar</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sar">
+<h1>sar<a class="headerlink" href="#sar" title="Permalink to this headline">¶</a></h1>
+<dl class="qcs function">
+<dt id="qcs.fn.sar">
+<code class="sig-name descname">sar</code><span class="sig-paren">(</span><em class="sig-param">minaf</em>, <em class="sig-param">step</em>, <em class="sig-param">maxaf</em><span class="sig-paren">)</span><a class="headerlink" href="#qcs.fn.sar" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>minaf</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.numeric"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">numeric</span></code></a>) – Minimal acceleration factor.</p></li>
+<li><p><strong>step</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.numeric"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">numeric</span></code></a>) – Acceleration change step.</p></li>
+<li><p><strong>maxaf</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.numeric"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">numeric</span></code></a>) – Maximal acceleration factor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><a class="reference internal" href="../../built_in_types.html#qcs.type.series"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">series</span></code></a></p>
+</dd>
+</dl>
+<p>Returns the <strong>parabolic stop and reverse</strong> instrument for the current security.</p>
+<p><strong>Calculation</strong></p>
+<p>Let:</p>
+<ul class="simple">
+<li><p><cite>EP</cite> to be the highest high of the current uptrend or the lowest low of the
+current downtrend.</p></li>
+<li><p><cite>AF</cite> to be the acceleration factor. <cite>AF</cite> starts at <cite>minaf</cite> and increases by
+<cite>step</cite> every time the EP rises in a Rising SAR or EP falls in a Falling SAR.
+<cite>AF</cite> is limited by <cite>maxaf</cite></p></li>
+</ul>
+<p>Then:</p>
+<ul class="simple">
+<li><p>For the rising <em>rising</em> Parabolic SAR: <span class="math notranslate nohighlight">\(\mathrm{sar} = \mathrm{sar}_1 + \mathrm{AF}_1 (\mathrm{EP}_1 - \mathrm{sar}_1)\)</span></p></li>
+<li><p>For the <em>falling</em> Parabolic SAR: <span class="math notranslate nohighlight">\(\mathrm{sar} = \mathrm{sar}_1 - \mathrm{AF}_1 (\mathrm{sar}_1 - \mathrm{EP}_1)\)</span></p></li>
+</ul>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="rgba.html"
+                        title="previous chapter">rgba</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="upper_prime.html"
+                        title="next chapter">upper_prime</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/api/misc/sar.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="upper_prime.html" title="upper_prime"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="rgba.html" title="rgba"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">sar</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, IQ Option.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

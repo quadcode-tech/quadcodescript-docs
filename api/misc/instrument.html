@@ -1,0 +1,135 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>instrument &#8212; IQ Option Technical Analysis Language 1.1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="is_series" href="is_series.html" />
+    <link rel="prev" title="index_range" href="index_range.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="is_series.html" title="is_series"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index_range.html" title="index_range"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">instrument</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="instrument">
+<h1>instrument<a class="headerlink" href="#instrument" title="Permalink to this headline">¶</a></h1>
+<dl class="qcs function">
+<dt id="qcs.fn.instrument">
+<code class="sig-name descname">instrument</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">short_name_or_overlay</em>, <em class="sig-param">description_or_overlay</em>, <em class="sig-param">icon_or_overlay</em>, <em class="sig-param">overlay</em><span class="sig-paren">)</span><span class="optional">[</span>has-table-overload<span class="optional">]</span><a class="headerlink" href="#qcs.fn.instrument" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.string"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">string</span></code></a>) – Display name of the instrument</p></li>
+<li><p><strong>short_name_or_overlay</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.string"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">string</span></code></a> or <a class="reference internal" href="../../built_in_types.html#qcs.type.boolean"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">boolean</span></code></a>) – Abbreviated name of the instrument. If the value is boolean, then the value is treated as <cite>overlay</cite>.</p></li>
+<li><p><strong>description_or_overlay</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.string"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">string</span></code></a> or <a class="reference internal" href="../../built_in_types.html#qcs.type.boolean"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">boolean</span></code></a>) – Description of the instrument. If the value is boolean,
+then the value is treated as <cite>overlay</cite>.</p></li>
+<li><p><strong>icon_or_overlay</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.string"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">string</span></code></a> or <a class="reference internal" href="../../built_in_types.html#qcs.type.boolean"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">boolean</span></code></a>) – Icon of the instrument. If the value is boolean, then the value
+is treated as <cite>overlay</cite>.</p></li>
+<li><p><strong>overlay</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.boolean"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">boolean</span></code></a>) – If <strong>true</strong> - the instrument is an overlay for the main plot.
+Otherwise, the instrument is in a separate panel below the main plot.</p></li>
+</ul>
+</dd>
+</dl>
+<p>This function determines the base parameters of the instrument. It should be called exactly once at the beginning of the script.</p>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index_range.html"
+                        title="previous chapter">index_range</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="is_series.html"
+                        title="next chapter">is_series</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/api/misc/instrument.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="is_series.html" title="is_series"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index_range.html" title="index_range"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">instrument</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, IQ Option.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

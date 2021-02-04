@@ -1,0 +1,283 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>input &#8212; IQ Option Technical Analysis Language 1.1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="input_group" href="input_group.html" />
+    <link rel="prev" title="wma" href="../averages/wma.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="input_group.html" title="input_group"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../averages/wma.html" title="wma"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">input</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="input">
+<h1>input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h1>
+<dl class="qcs enum">
+<dt id="qcs.enum.input_type">
+<code class="sig-name descname">input_type</code><a class="headerlink" href="#qcs.enum.input_type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Enum Items</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input.integer</strong> – Integer value.</p></li>
+<li><p><strong>input.double</strong> – Numeric value.</p></li>
+<li><p><strong>input.boolean</strong> – Boolean value. Presented as a checkbox.</p></li>
+<li><p><strong>input.active</strong> – Currently not supported.</p></li>
+<li><p><strong>input.candle_duration</strong> – Currently not supported.</p></li>
+<li><p><strong>input.string</strong> – String value.</p></li>
+<li><p><strong>input.integer_selection</strong> – Selection from the predefined list of integers.</p></li>
+<li><p><strong>input.double_selection</strong> – Selection from the predefined list of numerics.</p></li>
+<li><p><strong>input.string_selection</strong> – Selection from the predefined list of strings.</p></li>
+<li><p><strong>input.color</strong> – Color value.</p></li>
+<li><p><strong>input.line_width</strong> – Line width value.</p></li>
+<li><p><strong>input.plot_visibility</strong> – Plot visibility settings. Presented as a checkbox.</p></li>
+<li><p><strong>input.plot_shape_style</strong> – Shape style value. Not supported on mobile platforms.</p></li>
+<li><p><strong>input.plot_shape_size</strong> – Shape size value. Not supported on mobile platforms.</p></li>
+<li><p><strong>input.plot_shape_location</strong> – Shape location value. Not supported on mobile platforms.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="qcs function">
+<dt id="qcs.fn.input">
+<code class="sig-name descname">input</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">default</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">name</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">type</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">options</em><span class="optional">]</span><span class="sig-paren">)</span><span class="optional">[</span>has-table-overload<span class="optional">]</span><a class="headerlink" href="#qcs.fn.input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="qcs function">
+<dt id="qcs.fn.input_2">
+<code class="sig-name descname">input</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">default</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">name</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">type</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">min</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">max</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">step</em><span class="optional">]</span><span class="sig-paren">)</span><span class="optional">[</span>has-table-overload<span class="optional">]</span><a class="headerlink" href="#qcs.fn.input_2" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>default</strong> – Default return value for the input. Default value depends on <code class="code docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.string"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">string</span></code></a>) – Name of the input. Can be a localisation key. Default value is <code class="code docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>.</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="#qcs.enum.input_type"><code class="xref qcs qcs-enum docutils literal notranslate"><span class="pre">input_type</span></code></a>) – Input type. Default value depends on <code class="code docutils literal notranslate"><span class="pre">value</span></code>.</p></li>
+<li><p><strong>min</strong> – Minimal allowed value. Default value depends on <code class="code docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><strong>max</strong> – Maximal allowed value. Default value depends on <code class="code docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><strong>step</strong> – Value step. Default value depends on <code class="code docutils literal notranslate"><span class="pre">type</span></code>.</p></li>
+<li><p><strong>options</strong> (<code class="code docutils literal notranslate"><span class="pre">array[integer]</span></code>) – Array of options for the <em>input.integer_selection</em>, <em>input.double_selection</em>, <em>input.string_selection</em>. Default value is <code class="code docutils literal notranslate"><span class="pre">nil</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Same type, as <code class="code docutils literal notranslate"><span class="pre">default</span></code></p>
+</dd>
+</dl>
+<p><strong>input</strong> creates a user-modifiable value to fine tune the instrument.
+Inputs can control both the evaluation and the
+visual settings of the indicator. To execute successfully <strong>input</strong>
+must have a type set either explicitly or deduced
+from the default value. Thus either <em>default</em> or <em>type</em>
+must be present in the invocation. Not all input types can be
+manually deduced, these types must be set explicitly.</p>
+<p><strong>Indicator Settings</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 8%" />
+<col style="width: 19%" />
+<col style="width: 18%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>type</p></th>
+<th class="head"><p>default</p></th>
+<th class="head"><p>min</p></th>
+<th class="head"><p>max</p></th>
+<th class="head"><p>step</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>input.integer</strong></p></td>
+<td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(-2^{63}-1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(2^{63}-1\)</span></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>input.double</strong></p></td>
+<td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(-1.8e+308\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(1.8e+308\)</span></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>input.boolean</strong></p></td>
+<td><p>false</p></td>
+<td><p><em>N/A</em></p></td>
+<td><p><em>N/A</em></p></td>
+<td><p><em>N/A</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>input.string</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p></td>
+<td><p><em>N/A</em></p></td>
+<td><p><em>N/A</em></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>input.integer_selection</strong></p></td>
+<td><p>1</p></td>
+<td><p><em>N/A</em></p></td>
+<td><p><em>N/A</em></p></td>
+<td><p><code class="code docutils literal notranslate"><span class="pre">array[integer]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>input.double_selection</strong></p></td>
+<td><p>1</p></td>
+<td><p><em>N/A</em></p></td>
+<td><p><em>N/A</em></p></td>
+<td><p><code class="code docutils literal notranslate"><span class="pre">array[double]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>input.string_selection</strong></p></td>
+<td><p>1</p></td>
+<td><p><em>N/A</em></p></td>
+<td><p><em>N/A</em></p></td>
+<td><p><code class="code docutils literal notranslate"><span class="pre">array[string]</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Visual Settings</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 75%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>type</p></th>
+<th class="head"><p>default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>input.color</strong></p></td>
+<td><p>“white”</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>input.line_width</strong></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>input.plot_visibility</strong></p></td>
+<td><p>true</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Source and Average Selectors</strong></p>
+<p>For convenience, there are predefined arrays to create <strong>source</strong> and <strong>moving average</strong> selectors.</p>
+<p>Input Sources for overlay instruments:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">src_idx</span> <span class="o">=</span> <span class="n">input</span><span class="p">(</span><span class="n">inputs</span><span class="p">.</span><span class="n">close</span><span class="p">,</span> <span class="s2">&quot;Source&quot;</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">string_selection</span><span class="p">,</span> <span class="n">inputs</span><span class="p">.</span><span class="n">titles_overlay</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">source</span> <span class="o">=</span> <span class="n">inputs</span> <span class="p">[</span><span class="n">src_idx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Input Sources for standalone instruments:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">src_idx</span> <span class="o">=</span> <span class="n">input</span><span class="p">(</span><span class="n">inputs</span><span class="p">.</span><span class="n">close</span><span class="p">,</span> <span class="s2">&quot;Source&quot;</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">string_selection</span><span class="p">,</span> <span class="n">inputs</span><span class="p">.</span><span class="n">titles</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">source</span> <span class="o">=</span> <span class="n">inputs</span> <span class="p">[</span><span class="n">src_idx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Moving Averages:</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">avg_idx</span> <span class="o">=</span> <span class="n">input</span> <span class="p">(</span><span class="n">averages</span><span class="p">.</span><span class="n">sma</span><span class="p">,</span> <span class="s2">&quot;Average&quot;</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">string_selection</span><span class="p">,</span> <span class="n">averages</span><span class="p">.</span><span class="n">title</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">average</span> <span class="o">=</span> <span class="n">averages</span> <span class="p">[</span><span class="n">avg_idx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">period</span> <span class="o">=</span> <span class="n">input</span> <span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;front.period&quot;</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">integer</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">input</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;front.ind.source&quot;</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">string_selection</span><span class="p">,</span>  <span class="n">inputs</span><span class="p">.</span><span class="n">titles</span><span class="p">)</span>
+
+<span class="n">plot</span> <span class="p">(</span><span class="n">sma</span> <span class="p">(</span><span class="n">inputs</span> <span class="p">[</span><span class="n">source</span><span class="p">],</span> <span class="n">period</span><span class="p">),</span> <span class="s2">&quot;SMA&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../averages/wma.html"
+                        title="previous chapter">wma</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="input_group.html"
+                        title="next chapter">input_group</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/api/input/input.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="input_group.html" title="input_group"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../averages/wma.html" title="wma"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">input</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, IQ Option.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

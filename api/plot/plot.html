@@ -1,0 +1,170 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>plot &#8212; IQ Option Technical Analysis Language 1.1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="plot_candle" href="plot_candle.html" />
+    <link rel="prev" title="hline" href="hline.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="plot_candle.html" title="plot_candle"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="hline.html" title="hline"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">plot</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="plot">
+<h1>plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h1>
+<dl class="qcs enum">
+<dt id="qcs.enum.plot_style">
+<code class="sig-name descname">plot_style</code><a class="headerlink" href="#qcs.enum.plot_style" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>Style for the line plots.</p>
+</dd>
+<dt class="field-even">Enum Items</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>style.solid_line</strong> – Solid line.</p></li>
+<li><p><strong>style.dash_line</strong> – Dashed line.</p></li>
+<li><p><strong>style.area</strong> – Area plot.</p></li>
+<li><p><strong>style.points</strong> – Points plot.</p></li>
+<li><p><strong>style.crosses</strong> – Crosses plot.</p></li>
+<li><p><strong>style.levels</strong> – Levels plot.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="qcs enum">
+<dt id="qcs.enum.na_mode">
+<code class="sig-name descname">na_mode</code><a class="headerlink" href="#qcs.enum.na_mode" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Description</dt>
+<dd class="field-odd"><p>The way the plot handles <strong>nan</strong> values in the input series.</p>
+</dd>
+<dt class="field-even">Enum Items</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>na_mode.restart</strong> – The line is not drawn over the areas, where series values are <strong>nan</strong></p></li>
+<li><p><strong>na_mode.continue</strong> – The line connects subsequent valid values.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="qcs function">
+<dt id="qcs.fn.plot">
+<code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param">series</em><span class="optional">[</span>, <em class="sig-param">name</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">color</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">line_width</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">offset</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">plot_style</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">na_handling_mode</em><span class="optional">]</span><span class="sig-paren">)</span><span class="optional">[</span>has-table-overload<span class="optional">]</span><a class="headerlink" href="#qcs.fn.plot" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>series</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.series[numeric]"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">series[numeric]</span></code></a>) – Input series.</p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.string"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">string</span></code></a>) – Name of the plot. Default value is <code class="code docutils literal notranslate"><span class="pre">&quot;plot(first,second)&quot;</span></code></p></li>
+<li><p><strong>color</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.color"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">color</span></code></a>) – Color of the plot. Default value is <code class="code docutils literal notranslate"><span class="pre">&quot;white&quot;</span></code></p></li>
+<li><p><strong>line_width</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.integer"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">integer</span></code></a>) – Width of the line. Default value is <strong>1</strong></p></li>
+<li><p><strong>offset</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.integer"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">integer</span></code></a>) – The offset in bars to shift the line left or right. Default value is <strong>0</strong>.</p></li>
+<li><p><strong>plot_style</strong> (<a class="reference internal" href="#qcs.enum.plot_style"><code class="xref qcs qcs-enum docutils literal notranslate"><span class="pre">plot_style</span></code></a>) – Plot style. Not yet handled by the engine. Default value is <code class="code docutils literal notranslate"><span class="pre">style.solid_line</span></code>.</p></li>
+<li><p><strong>na_handling_mode</strong> (<a class="reference internal" href="#qcs.enum.na_mode"><code class="xref qcs qcs-enum docutils literal notranslate"><span class="pre">na_mode</span></code></a>) – The mode for handling <strong>nan</strong> data in the input <cite>series</cite>. Default value is <strong>na_mode.restart</strong>.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Plots the input <cite>series</cite> as a linear plot.</p>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="hline.html"
+                        title="previous chapter">hline</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="plot_candle.html"
+                        title="next chapter">plot_candle</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/api/plot/plot.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="plot_candle.html" title="plot_candle"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="hline.html" title="hline"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">plot</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, IQ Option.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>

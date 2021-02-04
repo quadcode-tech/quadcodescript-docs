@@ -1,0 +1,205 @@
+
+
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>plot_shape &#8212; IQ Option Technical Analysis Language 1.1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bizstyle.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="rect" href="rect.html" />
+    <link rel="prev" title="plot_candle" href="plot_candle.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="rect.html" title="rect"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plot_candle.html" title="plot_candle"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">plot_shape</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="plot-shape">
+<h1>plot_shape<a class="headerlink" href="#plot-shape" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is not supported on mobile platforms.</p>
+</div>
+<dl class="qcs enum">
+<dt id="qcs.enum.shape_style">
+<code class="sig-name descname">shape_style</code><a class="headerlink" href="#qcs.enum.shape_style" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Enum Items</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape_style.arrowdown</strong> – The shape is drawn as <img alt="arrowdown" class="align-middle" src="../../_images/arrowdown.png" />.</p></li>
+<li><p><strong>shape_style.arrowup</strong> – The shape is drawn as <img alt="arrowup" class="align-middle" src="../../_images/arrowup.png" />.</p></li>
+<li><p><strong>shape_style.circle</strong> – The shape is drawn as <img alt="circle" class="align-middle" src="../../_images/circle.png" />.</p></li>
+<li><p><strong>shape_style.cross</strong> – The shape is drawn as <img alt="cross" class="align-middle" src="../../_images/cross.png" />.</p></li>
+<li><p><strong>shape_style.diamond</strong> – The shape is drawn as <img alt="diamond" class="align-middle" src="../../_images/diamond.png" />.</p></li>
+<li><p><strong>shape_style.flag</strong> – The shape is drawn as <img alt="flag" class="align-middle" src="../../_images/flag.png" />.</p></li>
+<li><p><strong>shape_style.labeldown</strong> – The shape is drawn as <img alt="labeldown" class="align-middle" src="../../_images/labeldown.png" />.</p></li>
+<li><p><strong>shape_style.labelup</strong> – The shape is drawn as <img alt="labelup" class="align-middle" src="../../_images/labelup.png" />.</p></li>
+<li><p><strong>shape_style.square</strong> – The shape is drawn as <img alt="square" class="align-middle" src="../../_images/square.png" />.</p></li>
+<li><p><strong>shape_style.triangledown</strong> – The shape is drawn as <img alt="triangledown" class="align-middle" src="../../_images/triangledown.png" />.</p></li>
+<li><p><strong>shape_style.triangleup</strong> – The shape is drawn as <img alt="triangleup" class="align-middle" src="../../_images/triangleup.png" />.</p></li>
+<li><p><strong>shape_style.xcross</strong> – The shape is drawn as <img alt="xcross" class="align-middle" src="../../_images/xcross.png" />.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="qcs enum">
+<dt id="qcs.enum.shape_location">
+<code class="sig-name descname">shape_location</code><a class="headerlink" href="#qcs.enum.shape_location" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Enum Items</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape_location.abovebar</strong> – The shape is plotted above the bar.</p></li>
+<li><p><strong>shape_location.belowbar</strong> – The shape is plotted below the bar.</p></li>
+<li><p><strong>shape_location.bottom</strong> – The shape is plotted near the bottom chart border.</p></li>
+<li><p><strong>shape_location.top</strong> – The shape is plotted near the top chart border.</p></li>
+<li><p><strong>shape_location.absolute</strong> – The shape position is determined by the series.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="qcs enum">
+<dt id="qcs.enum.shape_size">
+<code class="sig-name descname">shape_size</code><a class="headerlink" href="#qcs.enum.shape_size" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Enum Items</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shape_size.auto</strong> – The shape size depends on the bar size.</p></li>
+<li><p><strong>shape_size.huge</strong> – The shape size is constantly huge.</p></li>
+<li><p><strong>shape_size.large</strong> – The shape size is constantly large.</p></li>
+<li><p><strong>shape_size.normal</strong> – The shape size is constantly normal.</p></li>
+<li><p><strong>shape_size.small</strong> – The shape size is constantly small.</p></li>
+<li><p><strong>shape_size.tiny</strong> – The shape size is constantly tiny.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="qcs function">
+<dt id="qcs.fn.plot_shape">
+<code class="sig-name descname">plot_shape</code><span class="sig-paren">(</span><em class="sig-param">series</em><span class="optional">[</span>, <em class="sig-param">name</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">plot_shape_style</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">plot_shape_size</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">shape_color</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">plot_shape_location</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">offset</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">text</em><span class="optional">]</span><span class="optional">[</span>, <em class="sig-param">text_color</em><span class="optional">]</span><span class="sig-paren">)</span><span class="optional">[</span>has-table-overload<span class="optional">]</span><a class="headerlink" href="#qcs.fn.plot_shape" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>series</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.series"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">series</span></code></a>) – Input series.
+The values are treated as <a class="reference internal" href="../../built_in_types.html#qcs.type.boolean"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">boolean</span></code></a>, if the <cite>plot_shape_style</cite> is not
+<strong>shape_location.absolute</strong></p></li>
+<li><p><strong>name</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.string"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">string</span></code></a>) – The plot name. Default value is <cite>series.name</cite>.</p></li>
+<li><p><strong>plot_shape_style</strong> (<a class="reference internal" href="#qcs.enum.shape_style"><code class="xref qcs qcs-enum docutils literal notranslate"><span class="pre">shape_style</span></code></a>) – The style of the shape. Default value is <strong>shape_style.xcross</strong>.</p></li>
+<li><p><strong>plot_shape_size</strong> (<a class="reference internal" href="#qcs.enum.shape_size"><code class="xref qcs qcs-enum docutils literal notranslate"><span class="pre">shape_size</span></code></a>.) – The size of the shape. Default value is <strong>shape_size.auto</strong>.</p></li>
+<li><p><strong>shape_color</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.color"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">color</span></code></a>) – The color of the shape. Default value is <code class="code docutils literal notranslate"><span class="pre">&quot;white&quot;</span></code>.</p></li>
+<li><p><strong>plot_shape_location</strong> (<a class="reference internal" href="#qcs.enum.shape_location"><code class="xref qcs qcs-enum docutils literal notranslate"><span class="pre">shape_location</span></code></a>) – The location of the shape. Default value is <strong>shape_location.abovebar</strong>.</p></li>
+<li><p><strong>offset</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.integer"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">integer</span></code></a>) – The offset in bars to shift the shape left or right. Default value is <strong>0</strong>.</p></li>
+<li><p><strong>text</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.string"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">string</span></code></a>) – The text to display. Default value is <code class="code docutils literal notranslate"><span class="pre">&quot;&quot;</span></code></p></li>
+<li><p><strong>text_color</strong> (<a class="reference internal" href="../../built_in_types.html#qcs.type.color"><code class="xref qcs qcs-type docutils literal notranslate"><span class="pre">color</span></code></a>) – The color of the text to display. Default value is <code class="code docutils literal notranslate"><span class="pre">&quot;white&quot;</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p>Plots a shape defined by the <cite>plot_shape_style</cite>. This type of plot is the most useful for
+the overlay instruments.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">plot_shape</span> <span class="p">{</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="n">close</span> <span class="o">&gt;</span> <span class="n">open</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="plot_candle.html"
+                        title="previous chapter">plot_candle</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="rect.html"
+                        title="next chapter">rect</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/api/plot/plot_shape.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../qcs-qcs.html" title="QCS Language Reference"
+             >QCS</a> |</li>
+        <li class="right" >
+          <a href="rect.html" title="rect"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plot_candle.html" title="plot_candle"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">IQ Option Technical Analysis Language 1.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">plot_shape</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, IQ Option.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+    </div>
+  </body>
+</html>
