@@ -7,14 +7,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quadcode Script &#8212; Quadcode Script 1.1.0 documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
     
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -52,33 +51,21 @@
 <p>The script on QCS defines the calculation of the single instrument value using the current security values, historical data and the user input.</p>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-lua notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">instrument</span> <span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Simple Moving Average&quot;</span><span class="p">,</span> <span class="n">short_name</span> <span class="o">=</span> <span class="s2">&quot;SMA&quot;</span><span class="p">,</span> <span class="n">overlay</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">}</span>
-
-<span class="n">period</span> <span class="o">=</span> <span class="n">input</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;Period&quot;</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">integer</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="n">input_group</span> <span class="p">{</span>
-   <span class="s2">&quot;Line&quot;</span><span class="p">,</span>
-   <span class="n">color</span> <span class="o">=</span> <span class="n">input</span> <span class="p">{</span> <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="n">color</span> <span class="p">},</span>
-   <span class="n">width</span> <span class="o">=</span> <span class="n">input</span> <span class="p">{</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="n">line_width</span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">ma</span> <span class="o">=</span> <span class="n">sma</span> <span class="p">(</span><span class="n">close</span><span class="p">,</span> <span class="n">period</span><span class="p">)</span>
-
-<span class="n">plot</span> <span class="p">(</span><span class="n">ma</span><span class="p">,</span> <span class="s2">&quot;SMA&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">instrument</span> <span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Simple Moving Average&quot;</span><span class="p">,</span> <span class="n">short_name</span> <span class="o">=</span> <span class="s2">&quot;SMA&quot;</span><span class="p">,</span> <span class="n">overlay</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">}</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">period</span> <span class="o">=</span> <span class="n">input</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;Period&quot;</span><span class="p">,</span> <span class="n">input</span><span class="p">.</span><span class="n">integer</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="n">input_group</span> <span class="p">{</span>
+<span class="linenos"> 6</span>   <span class="s2">&quot;Line&quot;</span><span class="p">,</span>
+<span class="linenos"> 7</span>   <span class="n">color</span> <span class="o">=</span> <span class="n">input</span> <span class="p">{</span> <span class="n">default</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="n">color</span> <span class="p">},</span>
+<span class="linenos"> 8</span>   <span class="n">width</span> <span class="o">=</span> <span class="n">input</span> <span class="p">{</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="n">line_width</span><span class="p">}</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="n">ma</span> <span class="o">=</span> <span class="n">sma</span> <span class="p">(</span><span class="n">close</span><span class="p">,</span> <span class="n">period</span><span class="p">)</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="n">plot</span> <span class="p">(</span><span class="n">ma</span><span class="p">,</span> <span class="s2">&quot;SMA&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="n">instrument</span> <span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Simple Moving Average&quot;</span><span class="p">,</span> <span class="n">short_name</span> <span class="o">=</span> <span class="s2">&quot;SMA&quot;</span><span class="p">,</span> <span class="n">overlay</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">}</span>
 </pre></div>
 </div>
@@ -113,122 +100,122 @@ see <a class="reference internal" href="api/input/input.html#qcs.fn.input"><code
 <div class="section" id="built-in-series">
 <h2>Built-in series<a class="headerlink" href="#built-in-series" title="Permalink to this headline">¶</a></h2>
 <dl class="qcs series">
-<dt id="qcs.series.open">
-<code class="sig-name descname">open</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.open" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.open">
+<span class="sig-name descname"><span class="pre">open</span></span><em class="property"><span class="pre">	overlayable</span></em><a class="headerlink" href="#qcs.series.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open value of the current candle</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.close">
-<code class="sig-name descname">close</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.close" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.close">
+<span class="sig-name descname"><span class="pre">close</span></span><em class="property"><span class="pre">	overlayable</span></em><a class="headerlink" href="#qcs.series.close" title="Permalink to this definition">¶</a></dt>
 <dd><p>Close value of the current candle</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.high">
-<code class="sig-name descname">high</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.high" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.high">
+<span class="sig-name descname"><span class="pre">high</span></span><em class="property"><span class="pre">	overlayable</span></em><a class="headerlink" href="#qcs.series.high" title="Permalink to this definition">¶</a></dt>
 <dd><p>High value of the current candle</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.low">
-<code class="sig-name descname">low</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.low" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.low">
+<span class="sig-name descname"><span class="pre">low</span></span><em class="property"><span class="pre">	overlayable</span></em><a class="headerlink" href="#qcs.series.low" title="Permalink to this definition">¶</a></dt>
 <dd><p>Low value of the current candle</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.volume">
-<code class="sig-name descname">volume</code><a class="headerlink" href="#qcs.series.volume" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.volume">
+<span class="sig-name descname"><span class="pre">volume</span></span><a class="headerlink" href="#qcs.series.volume" title="Permalink to this definition">¶</a></dt>
 <dd><p>Volume of the current candle</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.hml">
-<code class="sig-name descname">hml</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.hml" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.hml">
+<span class="sig-name descname"><span class="pre">hml</span></span><em class="property"><span class="pre">	overlayable</span></em><a class="headerlink" href="#qcs.series.hml" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="code docutils literal notranslate"><span class="pre">high</span> <span class="pre">-</span> <span class="pre">low</span></code></p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.hl2">
-<code class="sig-name descname">hl2</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.hl2" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.hl2">
+<span class="sig-name descname"><span class="pre">hl2</span></span><em class="property"><span class="pre">	overlayable</span></em><a class="headerlink" href="#qcs.series.hl2" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="code docutils literal notranslate"><span class="pre">(high</span> <span class="pre">+</span> <span class="pre">low)</span> <span class="pre">/</span> <span class="pre">2</span></code></p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.hlc3">
-<code class="sig-name descname">hlc3</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.hlc3" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.hlc3">
+<span class="sig-name descname"><span class="pre">hlc3</span></span><em class="property"><span class="pre">	overlayable</span></em><a class="headerlink" href="#qcs.series.hlc3" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="code docutils literal notranslate"><span class="pre">(high</span> <span class="pre">+</span> <span class="pre">low</span> <span class="pre">+</span> <span class="pre">close)</span> <span class="pre">/</span> <span class="pre">3</span></code> (aka <cite>typical price</cite>)</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.ohlc4">
-<code class="sig-name descname">ohlc4</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.ohlc4" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.ohlc4">
+<span class="sig-name descname"><span class="pre">ohlc4</span></span><em class="property"><span class="pre">	overlayable</span></em><a class="headerlink" href="#qcs.series.ohlc4" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="code docutils literal notranslate"><span class="pre">(open</span> <span class="pre">+</span> <span class="pre">high</span> <span class="pre">+</span> <span class="pre">low</span> <span class="pre">+</span> <span class="pre">close)</span> <span class="pre">/</span> <span class="pre">4</span></code></p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.hlcc4">
-<code class="sig-name descname">hlcc4</code><em class="property">	overlayable</em><a class="headerlink" href="#qcs.series.hlcc4" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.hlcc4">
+<span class="sig-name descname"><span class="pre">hlcc4</span></span><em class="property"><span class="pre">	overlayable</span></em><a class="headerlink" href="#qcs.series.hlcc4" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="code docutils literal notranslate"><span class="pre">(high</span> <span class="pre">+</span> <span class="pre">low</span> <span class="pre">+</span> <span class="pre">close</span> <span class="pre">+</span> <span class="pre">close)</span> <span class="pre">/</span> <span class="pre">4</span></code></p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.tr">
-<code class="sig-name descname">tr</code><a class="headerlink" href="#qcs.series.tr" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.tr">
+<span class="sig-name descname"><span class="pre">tr</span></span><a class="headerlink" href="#qcs.series.tr" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="code docutils literal notranslate"><span class="pre">max</span> <span class="pre">(high</span> <span class="pre">-</span> <span class="pre">low,</span> <span class="pre">high</span> <span class="pre">-</span> <span class="pre">close</span> <span class="pre">[1],</span> <span class="pre">close</span> <span class="pre">[1]</span> <span class="pre">-</span> <span class="pre">low)</span></code> (aka <cite>true range</cite>)</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.close_time">
-<code class="sig-name descname">close_time</code><a class="headerlink" href="#qcs.series.close_time" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.close_time">
+<span class="sig-name descname"><span class="pre">close_time</span></span><a class="headerlink" href="#qcs.series.close_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Candle closing time (unix time)</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.open_time">
-<code class="sig-name descname">open_time</code><a class="headerlink" href="#qcs.series.open_time" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.open_time">
+<span class="sig-name descname"><span class="pre">open_time</span></span><a class="headerlink" href="#qcs.series.open_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Candle opening time (unix time)</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.day">
-<code class="sig-name descname">day</code><a class="headerlink" href="#qcs.series.day" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.day">
+<span class="sig-name descname"><span class="pre">day</span></span><a class="headerlink" href="#qcs.series.day" title="Permalink to this definition">¶</a></dt>
 <dd><p>Candle opening time (day number in a year)</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.week_day">
-<code class="sig-name descname">week_day</code><a class="headerlink" href="#qcs.series.week_day" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.week_day">
+<span class="sig-name descname"><span class="pre">week_day</span></span><a class="headerlink" href="#qcs.series.week_day" title="Permalink to this definition">¶</a></dt>
 <dd><p>Candle opening time (day number in a week)</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.month">
-<code class="sig-name descname">month</code><a class="headerlink" href="#qcs.series.month" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.month">
+<span class="sig-name descname"><span class="pre">month</span></span><a class="headerlink" href="#qcs.series.month" title="Permalink to this definition">¶</a></dt>
 <dd><p>Candle opening time (month)</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.year">
-<code class="sig-name descname">year</code><a class="headerlink" href="#qcs.series.year" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.year">
+<span class="sig-name descname"><span class="pre">year</span></span><a class="headerlink" href="#qcs.series.year" title="Permalink to this definition">¶</a></dt>
 <dd><p>Candle opening time (year)</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.hour">
-<code class="sig-name descname">hour</code><a class="headerlink" href="#qcs.series.hour" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.hour">
+<span class="sig-name descname"><span class="pre">hour</span></span><a class="headerlink" href="#qcs.series.hour" title="Permalink to this definition">¶</a></dt>
 <dd><p>Candle opening time (hour)</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.minute">
-<code class="sig-name descname">minute</code><a class="headerlink" href="#qcs.series.minute" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.minute">
+<span class="sig-name descname"><span class="pre">minute</span></span><a class="headerlink" href="#qcs.series.minute" title="Permalink to this definition">¶</a></dt>
 <dd><p>Candle opening time (minute)</p>
 </dd></dl>
 
 <dl class="qcs series">
-<dt id="qcs.series.second">
-<code class="sig-name descname">second</code><a class="headerlink" href="#qcs.series.second" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object qcs" id="qcs.series.second">
+<span class="sig-name descname"><span class="pre">second</span></span><a class="headerlink" href="#qcs.series.second" title="Permalink to this definition">¶</a></dt>
 <dd><p>Candle opening time (second)</p>
 </dd></dl>
 
@@ -450,7 +437,7 @@ see <a class="reference internal" href="api/input/input.html#qcs.fn.input"><code
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020-2021, Quadcode.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
     </div>
   </body>
 </html>
