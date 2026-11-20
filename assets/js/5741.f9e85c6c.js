@@ -1,0 +1,1 @@
+(self.webpackChunkscript_indicators=self.webpackChunkscript_indicators||[]).push([[5741],{5741:()=>{}}]);
